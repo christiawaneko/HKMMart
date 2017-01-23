@@ -27,5 +27,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware'=>['auth'],'as'=>'admin.'],function(){
         Route::get('dashboard', 'HomeController@index')->name('dashboard');
         Route::resource('kategori','KategoriController');
+        Route::resource('article','ArticleController');
     });
 });

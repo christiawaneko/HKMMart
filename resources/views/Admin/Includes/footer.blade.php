@@ -31,22 +31,11 @@
     {{ Html::script('assets/admin/js/demo.js') }}
     {{ Html::script('assets/admin/js/jquery-1.10.2.js') }}
 
-	<script type="text/javascript">
-    	$(document).ready(function(){
-
-        	demo.initChartist();
-
-        	$.notify({
-            	icon: 'ti-gift',
-            	message: "Welcome to <b>Paper Dashboard</b> - a beautiful Bootstrap freebie for your next project."
-
-            },{
-                type: 'success',
-                timer: 4000
-            });
-
-    	});
-	</script>
+    @if (Session::has('sweet_alert.alert'))
+       <script>
+           swal({!! Session::get('sweet_alert.alert') !!});
+       </script>
+   @endif
   </head>
 
 </html>

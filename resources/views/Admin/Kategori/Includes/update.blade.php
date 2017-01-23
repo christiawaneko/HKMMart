@@ -9,22 +9,16 @@
                             <h4 class="title">Create Post</h4>
                         </div>
                         <div class="content">
-                            {!!  Form::model($category, ['method' => 'PATCH','route' => ['admin.category.update', $category->id],'files' => true]) !!}
+                            {!!  Form::model($kategori, ['method' => 'PATCH','route' => ['admin.kategori.update', $kategori->id],'files' => true]) !!}
 
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label>Nama Category</label>
-											{!! Form::text('category', null,array('class' => 'form-control'),'') !!}
-											{{ ($errors->has('category')) ? $errors->first('category') : ''}}
+											{!! Form::text('nama', null,array('class' => 'form-control'),'') !!}
+											{{ ($errors->has('nama')) ? $errors->first('nama') : ''}}
                                         </div>
                                     </div>
-                                    <div class="col-md-8">
-                                        <div class="form-group">
-                                            <label>Type</label>
-                                            {{ Form::select('type', ['Article' => 'Article', 'Events' => 'Events'],$category->type,['class'=>'form-control']) }}
 
-                                        </div>
-                                    </div>
                                     <div class="col-md-2">
                                         <div class="form-group" style="margin-top:22px">
                                             {!! Form::submit('Submit', array('class'=>'btn btn-info btn-fill pull-right')) !!}

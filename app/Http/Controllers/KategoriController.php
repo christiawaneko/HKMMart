@@ -24,7 +24,7 @@ class KategoriController extends Controller
     public function index()
     {
         //
-        $data = Kategori::orderBy('id_kategori','desc')->paginate(5);
+        $data = Kategori::orderBy('id','desc')->paginate(5);
         return view('Admin.Kategori.index',['kategori'=>$data]);
     }
 
@@ -54,7 +54,7 @@ class KategoriController extends Controller
         ]);
 
         $data = array(
-                    'nama' => Input::get('category'),
+                    'nama' => Input::get('kategori'),
                );
        $category = Kategori::create($data);
 
@@ -81,7 +81,8 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kategori = Kategori::where('id',$id)->first();
+        return view('Admin.Kategori.Includes.update')->with('kategori',$kategori);
     }
 
     /**
@@ -94,6 +95,14 @@ class KategoriController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $category = Kategori::find($id);
+
+        $category->nama = Input::get('nama');
+
+        $category->save();
+
+        Alert::info('Kategori baru anda Ubah','Edit');
+        return Redirect::route('admin.kategori.index');
     }
 
     /**
@@ -105,5 +114,9 @@ class KategoriController extends Controller
     public function destroy($id)
     {
         //
+        $category = Kategori::find($id);
+        $category->delete();
+        Alert::info('Kategori baru sudah anda hapus','Delete');
+        return Redirect::route('admin.kategori.index');
     }
 }

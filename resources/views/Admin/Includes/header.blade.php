@@ -17,7 +17,15 @@
     {{ Html::style('http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css') }}
     {{ Html::style('https://fonts.googleapis.com/css?family=Muli:400,300') }}
     {{ Html::style('assets/admin/css/themify-icons.css') }}
-    
+
+    {{-- SweetAlert Plugins   --}}
+   {{ Html::style('assets/bower_components/sweetalert/dist/sweetalert.css') }}
+   {{ Html::script('assets/bower_components/sweetalert/dist/sweetalert.min.js') }}
+   @include('sweet::alert')
+
+    {{ Html::script('assets/bower_components/tinymce/tinymce.min.js') }}
+    <script>tinymce.init({ selector:'textarea' });</script>
+
   <body>
 
 <!--Kode Wrapper Start-->

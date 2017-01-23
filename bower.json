@@ -1,0 +1,24 @@
+{
+  "name": "HKM Mart",
+  "description": "Asset Style HKM",
+  "main": "",
+  "authors": [
+    "christiawaneko <christiawaneko@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "christiawan.web.id"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/assets/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sweetalert": "^1.1.3"
+  }
+}

@@ -28,8 +28,8 @@
                             <p>Kategori</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="typography.html">
+                    <li class="{{ active('admin.article.index') }}">
+                        <a href="{{ route('admin.article.index') }}">
                             <i class="ti-text"></i>
                             <p>Article</p>
                         </a>
