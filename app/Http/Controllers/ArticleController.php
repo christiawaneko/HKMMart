@@ -90,6 +90,9 @@ class ArticleController extends Controller
     public function edit($id)
     {
         //
+        $article = Article::where('id', '=', $id)->first();
+        return view('Admin.Article.Includes.update')->with(['article' => $article]);
+
     }
 
     /**
